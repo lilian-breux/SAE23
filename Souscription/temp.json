@@ -1,0 +1,12 @@
+{"bate":"RT","room":"E208","type":"temperature","value":26,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"RT","room":"E208","type":"co2","value":82,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"RT","room":"E208","type":"luminosite","value":626,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"RT","room":"E207","type":"temperature","value":24,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"RT","room":"E207","type":"co2","value":58,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"RT","room":"E207","type":"luminosite","value":786,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"INFO","room":"B208","type":"temperature","value":26,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"INFO","room":"B208","type":"co2","value":83,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"INFO","room":"B208","type":"luminosite","value":638,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"INFO","room":"B207","type":"temperature","value":26,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"INFO","room":"B207","type":"co2","value":80,"date":"24-05-2022","hours":"14:23:48"}
+{"bate":"INFO","room":"B207","type":"luminosite","value":652,"date":"24-05-2022","hours":"14:23:48"}

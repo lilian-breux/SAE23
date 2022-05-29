@@ -19,6 +19,6 @@ do
 	type=$(sed -n "${i}p" "temp.json" | jq '.type' | tr -d \")
 	#echo "En $bate dans la salle $room à $hours le $date, il y a $value de $type"
 	
-	query="INSERT INTO \`Mesure\` (\`bate\`, \`room\`, \`type\`, \`date\`, \`hours\`, \`value\`, \`id\`) VALUES ('$bate', '$room', '$type', '$date', '$date $hours', '$value', NULL);"
+	query="INSERT INTO \`Mesure\` (\`id\`, \`bate\`, \`room\`, \`type\`, \`date\`, \`hours\`, \`value\`) VALUES (NULL, '$bate', '$room', '$type', '$date', '$date $hours', '$value');"
 	mysql --host=fdb31.eohost.com --port=3306 --user=3953973_lmll -pMatLucLuiLil4 mysql -e "$query";
 done

@@ -1,3 +1,8 @@
+.active {
+    background-color: #76DBD1;
+	float: right;
+}
+
 body {
 background-color: #EFEFEF;
 }
@@ -10,7 +15,7 @@ h1 {
 	border-color: black;
 	border-radius: 15px;
 }
-Button {
+button {
 	background-color: #000000;
 	border-radius: 10px;
 	color: #FFFFFF;
@@ -72,4 +77,55 @@ nav li a {
 
 nav li a:hover {
     background-color: #111;
+}
+
+
+
+nav li {
+    border-right: 1px solid #bbb;
+}
+
+nav li:last-child {
+    border-right: 1px solid #bbb;
+}
+
+/* Footer */
+
+footer {
+	bottom: 0;
+	width: 100%;
+	position: fixed;
+}
+
+footer li a {
+	display: block;
+    color: white;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+footer li a:hover {
+    background-color: #111;
+}
+
+
+/* Mentions légales */
+
+table, td{
+    border: 3px solid;
+}
+thead {
+	font-size: 25px;
+}
+tr:first-child {
+	font-weight:bold;
 }

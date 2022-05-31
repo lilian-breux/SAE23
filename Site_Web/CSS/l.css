@@ -1,0 +1,75 @@
+body {
+background-color: #EFEFEF;
+}
+h1 {
+	text-align: center;
+	color: #000000;
+	font-size: 45px;
+	border-width: 5px;
+	border-style: ridge;
+	border-color: black;
+	border-radius: 15px;
+}
+Button {
+	background-color: #000000;
+	border-radius: 10px;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 20px;
+}
+input {
+	border-radius: 10px;
+	font-size: 20px;
+}
+select {
+	border-radius: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+header {
+	text-align: center;
+	color: #000000;
+	font-size: 50px;
+	border-width: 5px;
+	border-style: ridge;
+	border-color: black;
+	border-radius: 15px;
+}
+p{
+	font-size: 20px;
+}	
+li {
+	font-size: 20px;
+}
+
+
+/* Barre de navigation*/
+nav {
+	position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}

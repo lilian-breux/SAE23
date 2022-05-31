@@ -6,7 +6,7 @@
         <field id="tpd5" name="Date de fin" width="75" order="2"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="color.recent">
-            <![CDATA[#33ffff #cc00cc #66ff00 #ff6666]]>
+            <![CDATA[#ccccff #ccff00 #cc66ff #ff0033 #33ffff #cc00cc #66ff00 #ff6666]]>
         </option>
     </view>
     <view id="resource-table">
@@ -37,54 +37,60 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Livrable 1" color="#ff6666" meeting="false" start="2022-05-24" duration="13" complete="100" thirdDate="2022-05-24" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Diagramme de GANTT" color="#ccccff" meeting="false" start="2022-05-24" duration="12" complete="100" thirdDate="2022-05-24" thirdDate-constraint="0" priority="2" expand="true">
             <notes>
-                <![CDATA[GANTT, schéma conception BD (onglet concepteur sous
-PhpMyAdmin)]]>
+                <![CDATA[Livrable 1]]>
             </notes>
-            <depend id="1" type="2" difference="0" hardness="Strong"/>
-            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="1" type="1" difference="0" hardness="Strong"/>
+            <depend id="2" type="1" difference="0" hardness="Strong"/>
+            <depend id="4" type="1" difference="0" hardness="Strong"/>
         </task>
-        <task id="1" name="Livrable 2" color="#66ff00" meeting="false" start="2022-06-06" duration="7" complete="0" thirdDate="2022-05-24" thirdDate-constraint="0" expand="true">
+        <task id="1" name="Schéma conception base de données (onglet concepteur sous PhpMyAdmin)" color="#66ff00" meeting="false" start="2022-05-24" duration="12" complete="100" thirdDate="2022-05-24" thirdDate-constraint="0" expand="true">
             <notes>
-                <![CDATA[flow Node-RED]]>
+                <![CDATA[Livrable 1]]>
             </notes>
-            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="2" type="1" difference="0" hardness="Strong"/>
         </task>
-        <task id="2" name="Livrable 3" color="#cc00cc" meeting="false" start="2022-06-06" duration="7" complete="0" thirdDate="2022-05-24" thirdDate-constraint="0" expand="true">
+        <task id="2" name="Flow Node-RED" color="#cc00cc" meeting="false" start="2022-05-24" duration="19" complete="80" thirdDate="2022-05-24" thirdDate-constraint="0" priority="4" expand="true">
             <notes>
-                <![CDATA[Dashboard Grafana]]>
+                <![CDATA[Livrable 2]]>
             </notes>
-            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="1" difference="0" hardness="Strong"/>
         </task>
-        <task id="3" name="Livrable 4" color="#33ffff" meeting="false" start="2022-06-13" duration="7" complete="0" thirdDate="2022-05-24" thirdDate-constraint="0" expand="true">
+        <task id="3" name="Dashboard Grafana" color="#33ffff" meeting="false" start="2022-05-24" duration="19" complete="75" thirdDate="2022-05-24" thirdDate-constraint="0" priority="4" expand="true">
             <notes>
-                <![CDATA[: Version finale du projet (codes et fichiers), URL projet
-Github]]>
+                <![CDATA[Livrable 3]]>
+            </notes>
+        </task>
+        <task id="4" name="Version finale du projet (codes et fichiers), URL projet Github" color="#ff0033" meeting="false" start="2022-05-24" duration="26" complete="20" thirdDate="2022-05-16" thirdDate-constraint="0" priority="4" expand="true">
+            <notes>
+                <![CDATA[Livrable 4]]>
             </notes>
         </task>
     </tasks>
     <resources>
-        <resource id="0" name="Lucas BERJAUD" function="Default:0" contacts="" phone=""/>
-        <resource id="1" name="Luis GONZALEZ PATINO" function="Default:0" contacts="" phone=""/>
-        <resource id="2" name="Lilian BREUX" function="Default:0" contacts="" phone=""/>
-        <resource id="3" name="Mathéo TRIADOU" function="Default:0" contacts="" phone=""/>
+        <resource id="0" name="Lucas BERJAUD" function="3" contacts="" phone=""/>
+        <resource id="1" name="Luis GONZALEZ PATINO" function="2" contacts="" phone=""/>
+        <resource id="2" name="Lilian BREUX" function="Default:1" contacts="" phone=""/>
+        <resource id="3" name="Mathéo TRIADOU" function="1" contacts="" phone=""/>
     </resources>
     <allocations>
-        <allocation task-id="0" resource-id="0" function="Default:0" responsible="false" load="25.0"/>
-        <allocation task-id="3" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
-        <allocation task-id="1" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
-        <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="25.0"/>
-        <allocation task-id="3" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
-        <allocation task-id="1" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
-        <allocation task-id="3" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
-        <allocation task-id="2" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
-        <allocation task-id="0" resource-id="3" function="Default:0" responsible="false" load="50.0"/>
-        <allocation task-id="3" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
-        <allocation task-id="2" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="0" resource-id="0" function="3" responsible="true" load="60.0"/>
+        <allocation task-id="4" resource-id="0" function="3" responsible="false" load="40.0"/>
+        <allocation task-id="4" resource-id="1" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="1" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="4" resource-id="2" function="Default:1" responsible="true" load="75.0"/>
+        <allocation task-id="2" resource-id="3" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="3" resource-id="3" function="1" responsible="true" load="30.0"/>
+        <allocation task-id="4" resource-id="3" function="1" responsible="false" load="40.0"/>
     </allocations>
     <vacations/>
     <previous/>
     <roles roleset-name="Default"/>
     <roles roleset-name="SoftwareDevelopment"/>
+    <roles>
+        <role id="1" name="Analyste des TP's"/>
+        <role id="2" name="Concepteur Web"/>
+        <role id="3" name="Brainstormer et Supporter"/>
+    </roles>
 </project>

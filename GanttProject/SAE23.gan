@@ -55,9 +55,8 @@
             <notes>
                 <![CDATA[Livrable 2]]>
             </notes>
-            <depend id="3" type="1" difference="0" hardness="Strong"/>
         </task>
-        <task id="3" name="Dashboard Grafana" color="#33ffff" meeting="false" start="2022-05-24" duration="19" complete="75" thirdDate="2022-05-24" thirdDate-constraint="0" priority="4" expand="true">
+        <task id="3" name="Dashboard Grafana" color="#33ffff" meeting="false" start="2022-05-31" duration="12" complete="75" thirdDate="2022-05-24" thirdDate-constraint="0" priority="4" expand="true">
             <notes>
                 <![CDATA[Livrable 3]]>
             </notes>

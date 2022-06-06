@@ -6,17 +6,17 @@
 #__________________________________________________#
 nbr_of_values=12 #number of values wanted
 
-echo "$(mosquitto_sub -h localhost -p 1883 -t iut/\# -C $nbr_of_values)" > temp.json 
+echo "$(mosquitto_sub -h localhost -p 1883 -t iut/\# -C $nbr_of_values)" > /home/lilian/Bureau/SAE23/Souscription/temp.json 
 
-nbrlignes=$(wc -l temp.json | cut -f1 -d' ') #numbers of lines of a file
+nbrlignes=$(wc -l /home/lilian/Bureau/SAE23/Souscription/temp.json | cut -f1 -d' ') #numbers of lines of a file
 for (( i=1; i<=$nbrlignes; i++ ))
 do
-	value=$(sed -n "${i}p" "temp.json" | jq '.value')
-	bate=$(sed -n "${i}p" "temp.json" | jq '.bate' | tr -d \")
-	room=$(sed -n "${i}p" "temp.json" | jq '.room' | tr -d \")
-	date=$(sed -n "${i}p" "temp.json" | jq '.date' | tr -d \")
-	hours=$(sed -n "${i}p" "temp.json" | jq '.hours' | tr -d \")
-	type=$(sed -n "${i}p" "temp.json" | jq '.type' | tr -d \")
+	value=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.value')
+	bate=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.bate' | tr -d \")
+	room=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.room' | tr -d \")
+	date=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.date' | tr -d \")
+	hours=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.hours' | tr -d \")
+	type=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.type' | tr -d \")
 
 	#--- Addition of sensors if they don't exist ---#
 	query="SELECT * FROM \`Capteur\` WHERE room='$room' AND type='$type';"
@@ -39,6 +39,6 @@ do
 	idmesu=$(/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query")
 	idmesu=$(echo ${idmesu} | sed 's/.\{6\}//')
 
-	query="INSERT INTO \`Valeur\` (\`idcap\`, \`idmesu\`, \`value\`, \`id\`) VALUES ($idcap, $idmesu, $value, NULL);"
+	query="INSERT INTO \`Valeur\` (\`idcap\`, \`idmesu\`, \`value\`) VALUES ($idcap, $idmesu, $value);"
 	/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query"
 done

@@ -4,9 +4,9 @@
 #Transmition of data
 #
 #__________________________________________________#
-nbr_of_values=12 #number of values wanted t
+nbr_of_values=12 #number of values wanted
 
-echo "$(mosquitto_sub -h localhost -p 1883 -t iut/# -C $nbr_of_values)" > temp.json
+echo "$(mosquitto_sub -h localhost -p 1883 -t iut/\# -C $nbr_of_values)" > temp.json 
 
 nbrlignes=$(wc -l temp.json | cut -f1 -d' ') #numbers of lines of a file
 for (( i=1; i<=$nbrlignes; i++ ))
@@ -17,8 +17,28 @@ do
 	date=$(sed -n "${i}p" "temp.json" | jq '.date' | tr -d \")
 	hours=$(sed -n "${i}p" "temp.json" | jq '.hours' | tr -d \")
 	type=$(sed -n "${i}p" "temp.json" | jq '.type' | tr -d \")
-	#echo "En $bate dans la salle $room à $hours le $date, il y a $value de $type"
-	
-	query="INSERT INTO \`Mesure\` (\`id\`, \`bate\`, \`room\`, \`type\`, \`date\`, \`hours\`, \`value\`) VALUES (NULL, '$bate', '$room', '$type', '$date', '$date $hours', '$value');"
-	mysql --host=fdb31.eohost.com --port=3306 --user=3953973_lmll -pMatLucLuiLil4 mysql -e "$query";
+
+	#--- Addition of sensors if they don't exist ---#
+	query="SELECT * FROM \`Capteur\` WHERE room='$room' AND type='$type';"
+	result=$(/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query")
+	if [ -z "$result" ]
+	then
+		query="INSERT INTO \`Capteur\` (\`bate\`, \`type\`, \`room\`, \`idcapt\`) VALUES ('$bate', '$type', '$room', NULL)"
+		/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query"
+	fi
+
+	#--- Addition of new values ---#
+	query="INSERT INTO \`Mesure\`(\`date\`, \`hours\`, \`idmesu\`) VALUES ('$date','$hours', NULL)"
+	/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query"
+
+	query="SELECT \`idcapt\` FROM \`Capteur\` WHERE bate='$bate' AND type='$type' AND room='$room'"
+	idcap=$(/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query") #Return "idcapt <number>"
+	idcap=$(echo ${idcap} | sed 's/.\{6\}//') #delete the first 6 caracters to transform the variable to a number
+
+	query="SELECT \`idmesu\` FROM \`Mesure\` WHERE date='$date' AND hours='$hours'"
+	idmesu=$(/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query")
+	idmesu=$(echo ${idmesu} | sed 's/.\{6\}//')
+
+	query="INSERT INTO \`Valeur\` (\`idcap\`, \`idmesu\`, \`value\`, \`id\`) VALUES ($idcap, $idmesu, $value, NULL);"
+	/opt/lampp/bin/mysql -h localhost -u lmll -pMatLucLuiLil4 -D SAE23 -e "$query"
 done

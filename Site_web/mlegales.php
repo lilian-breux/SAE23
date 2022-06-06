@@ -40,7 +40,7 @@
 
                 <h2>1. Présentation du site internet.</h2>
                 <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet <a href="http://breux.atwebpages.com/">http://breux.atwebpages.com/</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:
-                </p><p><strong>Propriétaire</strong> :   BREUX Lilian, TRIADOU Mathéo, GONZALEZ PATINO Luis, BERJAUD Lucas   – BP 60073 31703 Cédex, 1 Pl. Georges Brassens 31700 Blagnac<br>
+                </p><p><strong>Propriétaires</strong> :   BREUX Lilian, TRIADOU Mathéo, GONZALEZ PATINO Luis, BERJAUD Lucas   – BP 60073 31703 Cédex, 1 Pl. Georges Brassens 31700 Blagnac<br>
                               
                 <strong>Responsable publication</strong> : TRIADOU Mathéo – mmatheo.triadou@etud.univ-tlse2.fr<br>
                 Le responsable publication est une personne physique ou une personne morale.<br>

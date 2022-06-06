@@ -14,9 +14,10 @@
   <link rel="stylesheet" type="text/css" href="CSS/l.css" />
  </head>
  <body>
-	<?php 
+	 <?php 
 		include("./includes/nav.php");
 	?>
+
 	 <br>
 	 <br>
 	 <br>
@@ -48,7 +49,7 @@
                 <strong>Délégué à la protection des données</strong> : BREUX Lilian – lilian.breux@etu.univ-tlse2.fr<br>
                 </p>
 
-                <div ng-bind-html="linkHTML"><p>Ce modèle de mentions légales est proposé par le <a href="https://fr.orson.io/1371/generateur-mentions-legales" title="générateur de mentions légales RGPD d">générateur de mentions légales RGPD d'Orson.io</a></p></div>
+                <div><p>Ce modèle de mentions légales est proposé par le <a href="https://fr.orson.io/1371/generateur-mentions-legales" title="générateur de mentions légales RGPD d">générateur de mentions légales RGPD d'Orson.io</a></p></div>
 
 
 
@@ -170,8 +171,6 @@
                 Les Données Personnelles de l’Utilisateur peuvent être traitées par des filiales de <a href="http://breux.atwebpages.com/">http://breux.atwebpages.com/</a> et des sous-traitants (prestataires de services), exclusivement afin de réaliser les finalités de la présente politique.</p>
                 <p>
                 Dans la limite de leurs attributions respectives et pour les finalités rappelées ci-dessus, les principales personnes susceptibles d’avoir accès aux données des Utilisateurs de <a href="http://breux.atwebpages.com/">http://breux.atwebpages.com/</a> sont principalement les agents de notre service client.</p>
-                
-                <div ng-bind-html="rgpdHTML"></div>
 
 
                 <h2>8. Notification d’incident</h2>
@@ -233,9 +232,9 @@
                 Tout litige en relation avec l’utilisation du site <a href="http://breux.atwebpages.com/">http://breux.atwebpages.com/</a> est soumis au droit français. 
                 En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de </p>
 
-	 </body>
 	 <footer>
 		<ul>
 			<li><a href="mlegales.html"> Mentions Légales </a></li>
 		</ul>
 	 </footer>
+</body>

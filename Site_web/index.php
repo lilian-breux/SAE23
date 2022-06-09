@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="fr">
  <head>
-  /* Title of the website */
+  /* Title of the web page */
   <title>SAE 23</title>
 	 
   /* Definition of the metadata of the website */
@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="../styles/style.css" />
  </head>
 	
-	/* Beginning of the website's body */
+	/* Beginning of the web page's body */
 	 <body>
 	 	<?php 
             include("./includes/nav.php");
@@ -72,7 +72,7 @@
 		</ul>
 		<br>
 		 
-	/* Website's footer */
+	/* Web page's footer */
 	 <footer>
 		<ul>
 			<li><a href="mlegales.html"> Mentions Légales </a></li>

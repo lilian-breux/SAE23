@@ -5,10 +5,10 @@
 <html lang="fr">
 	
     <head>
-	/* Title of the web page */
+	<!-- Title of the web page -->
 	<title>Consultation</title>  
 	    
-	/* Definition of the metadata of the website */   
+	/* Definition of the metadata of the website -->   
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
@@ -17,17 +17,17 @@
         <link rel="stylesheet" type="text/css" href="../styles/style.css" />
     </head>
 	
-    /* Beginning of the website's body */
+    <!-- Beginning of the website's body -->
     <body>
         <?php 
             include("./includes/nav.php");
             include("mysql.php");
     	?>
 	
-	/* Title */
+	<!-- Title -->
         <h1>Consultation en temps réel</h1>
 	    
-	/* PHP code used to extract the last measurement done by the sensors */ 
+	<!-- PHP code used to extract the last measurement done by the sensors --> 
         <?php 
             $requete="SELECT max(date), max(hours) FROM `Mesure`";
             $resultat = mysqli_query($id_bd, $requete);
@@ -38,7 +38,7 @@
             #echo "<p>Date de la dernière mesure".$ligne["date"]."<br /> Heure de la dernière mesure :".$test["hours"]."</p>";
         ?>
 	    
-	/* Table to extract the values sent by the sensors in real time from "Bâtiment RT" */
+	<!-- Table to extract the values sent by the sensors in real time from "Bâtiment RT" -->
         <table>
             <thead>
                 <tr>
@@ -53,7 +53,7 @@
                     <td>Co2</td>
                 </tr>
 		    
-		/* PHP code to extract the values sent by the sensors in real time from "Bâtiment RT" */    
+		<!-- PHP code to extract the values sent by the sensors in real time from "Bâtiment RT" -->    
                 <?php 
                     $piece = array('E207', 'E208');
                     for ($j = 0; $j <= 1; $j++) {
@@ -91,7 +91,7 @@
             </tbody>
         </table>
 	    
-	/* Table to extract the values sent by the sensors in real time from "Bâtiment INFO" */
+	<!-- Table to extract the values sent by the sensors in real time from "Bâtiment INFO" -->
         <table>
             <thead>
                 <tr>
@@ -106,7 +106,7 @@
                     <td>Co2</td>
                 </tr>
 		    
-		/* PHP code to extract the values sent by the sensors in real time from "Bâtiment INFO" */    
+		<!-- PHP code to extract the values sent by the sensors in real time from "Bâtiment INFO" -->    
                 <?php 
                     $piece = array('B207', 'B208');
                     for ($j = 0; $j <= 1; $j++) {

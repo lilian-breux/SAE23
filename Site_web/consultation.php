@@ -3,10 +3,16 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Consultation</title>
+	
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+	<meta name="description" content="SAE" />
+	<meta name="keywords" content="HTML, CSS, PHP" />
+	<title>Consultation</title>
         <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+		
     </head>
     <body>
         <?php 

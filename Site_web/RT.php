@@ -11,7 +11,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Batiment réseaux et télécoms</title>
-        <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+        <link rel="stylesheet" type="text/css" href="../styles/style.css" />
     </head>
     <body>
         <h1>Batiment réseau</h1>

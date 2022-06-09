@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		/* Title of the web page */
+		<!-- Title of the web page -->
 		<title> Connexion </title>
 		
-		/* Definition of the metadata of the website */   
+		<!-- Definition of the metadata of the website -->   
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="../styles/style.css" />
 	</head>
 	
-   /* Beginning of the website's body */	
+    <!-- Beginning of the website's body -->	
     <body>
         <section>
             <?php
@@ -33,7 +33,7 @@
                     <option value="Administration">Administration</option>
 	
 			
-		/* Beginning of the PHP code to display a responsive form */ 
+		<!-- Beginning of the PHP code to display a responsive form --> 
                 <?php
                     $requete = "SELECT * FROM `Batiment` ORDER BY `name`";
                     $resultat = mysqli_query($id_bd, $requete)

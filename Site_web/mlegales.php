@@ -11,7 +11,7 @@
   <meta name="author" content="LG" />
   <meta name="description" content="SAE" />
   <meta name="keywords" content="HTML, CSS" />
-  <link rel="stylesheet" type="text/css" href="CSS/l.css" />
+  <link rel="stylesheet" type="text/css" href="../styles/style.css" />
  </head>
  <body>
 	 <?php 

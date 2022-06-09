@@ -5,10 +5,10 @@
 <html lang="fr">
 	
  <head>
-  /* Title of the web page */
+  <!-- Title of the web page -->
   <title>Mentions légales</title>
 	 
-  /* Definition of the metadata of the website */ 	 
+  <!-- Definition of the metadata of the website --> 	 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
@@ -18,16 +18,16 @@
   <link rel="stylesheet" type="text/css" href="../styles/style.css" />
  </head>
 	
-/* Beginning of the website's body */	
+<!-- Beginning of the website's body -->	
  <body>
 	 <?php 
 		include("./includes/nav.php");
 	?>
 	 
-	 /* Title */
+	 <!-- Title -->
 	 <h1> Mentions légales </h1>
 	 
-	/* Legal notices generated automatically */	 
+	 <!-- Legal notices generated automatically -->	 
 	 <h2>Définitions</h2>
                 <p><b>Client :</b> tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.<br>
                 <b>Prestations et Services :</b> <a href="http://breux.atwebpages.com/">http://breux.atwebpages.com/</a> met à disposition des Clients :</p>
@@ -235,7 +235,7 @@
                 Tout litige en relation avec l’utilisation du site <a href="http://breux.atwebpages.com/">http://breux.atwebpages.com/</a> est soumis au droit français. 
                 En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de </p>
 	
-	 /* Footer of the web page */
+	 <!-- Footer of the web page -->
 	 <footer>
 		<ul>
 			<li><a href="mlegales.html"> Mentions Légales </a></li>

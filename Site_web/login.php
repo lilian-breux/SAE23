@@ -5,10 +5,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<meta charset="UTF-8" />
-		<title>Connexion</title>
+		/* Title of the web page */
+		<title> Connexion </title>
+		
+		/* Definition of the metadata of the website */   
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<meta name="description" content="SAE" />
+		<meta name="keywords" content="HTML, CSS, PHP" />
 		<link rel="stylesheet" type="text/css" href="../styles/style.css" />
 	</head>
+	
+   /* Beginning of the website's body */	
     <body>
         <section>
             <?php
@@ -22,6 +31,9 @@
                 <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" minlength="3" required /><br />
                 <select name="grade" id="grade">
                     <option value="Administration">Administration</option>
+	
+			
+		/* Beginning of the PHP code to display a responsive form */ 
                 <?php
                     $requete = "SELECT * FROM `Batiment` ORDER BY `name`";
                     $resultat = mysqli_query($id_bd, $requete)

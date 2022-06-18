@@ -22,7 +22,7 @@
 	 	<?php 
             include("./includes/nav.php");
     		?>
-		 <!-- Titre */
+		 <!-- Titre -->
 		<h1> SAE 23 - Mettre en place une solution informatique pour l'entreprise </h1>
 		<br>
 		 

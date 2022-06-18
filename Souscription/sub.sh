@@ -6,11 +6,12 @@
 #__________________________________________________#
 nbr_of_values=12 #number of values wanted
 
-echo "$(mosquitto_sub -h localhost -p 1883 -t iut/\# -C $nbr_of_values)" > /home/lilian/Bureau/SAE23/Souscription/temp.json 
+echo "$(mosquitto_sub -h localhost -p 1883 -t iut/\# -C $nbr_of_values)" > /home/lilian/Bureau/SAE23/Souscription/temp.json #recovery of data from each temperature, CO2 and luminosity sensor in a json format
 
 nbrlignes=$(wc -l /home/lilian/Bureau/SAE23/Souscription/temp.json | cut -f1 -d' ') #numbers of lines of a file
 for (( i=1; i<=$nbrlignes; i++ ))
 do
+	#--- read and retrieve data that are in json ---#
 	value=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.value')
 	bate=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.bate' | tr -d \")
 	room=$(sed -n "${i}p" "/home/lilian/Bureau/SAE23/Souscription/temp.json" | jq '.room' | tr -d \")

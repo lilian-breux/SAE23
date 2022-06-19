@@ -66,6 +66,40 @@
                 <button type="submit">Envoyer</button>
                 <button type="reset">Réinitialiser</button>
             </form>
+            <h2>Supression/Ajout de capteurs</h2>
+            <form action="./security/modifcapteur.php" method="POST">
+                <select name="bate" id="bate">
+                <?php
+                    /* SQL query to retrieve the login corresponding to the building */
+                    $requete = "SELECT * FROM `Batiment` ORDER BY `name`";
+                    $resultat = mysqli_query($id_bd, $requete)
+                        or die("Execution de la requete impossible : $requete");
+                    mysqli_close($id_bd);
+                    while($ligne=mysqli_fetch_array($resultat)){
+                        extract($ligne);
+                        if ($i){
+                            echo '<option value="'.$name.'">'.$name.'</option>' ;
+                            $i=false;
+                        } else {
+                             echo '<option value="'.$name.'">'.$name.'</option>' ;
+                        }  
+                    }
+                ?>
+                </select><br />
+                <input type="text" name="room" id="room" placeholder="Nom de la salle" maxlength="4" required /><br />
+                <select name="type" id="type">
+                    <option value="temperature">Temperature</option>
+                    <option value="luminosite">Luminosite</option>
+                    <option value="co2">Co2</option>
+                </select><br />
+                <select name="modification" id="modification">
+                    <option value="Nouveau">Nouveau capteur</option>
+                    <option value="Supprimer">Supprimer un capteur</option>
+                </select><br />
+
+                <button type="submit">Envoyer</button>
+                <button type="reset">Réinitialiser</button>
+            </form>
             <?php
                 /* Allows to notify if there was an error or everything went well */
                 if(isset($_GET['erreur'])){ 
@@ -78,6 +112,10 @@
                         echo "<p class=\"error\">Nom du batiment et/ou Utilisateur sont incorrect</p>";
                     if($err==3)
                         echo "<p class=\"error\">Nom du batiment existe déjà</p>";
+                    if($err==4)
+                        echo "<p class=\"error\">Le capteur existe déjà</p>";
+                    if($err==5)
+                        echo "<p class=\"error\">Le capteur n'existe pas</p>";
                 }
             ?>
         </section>
@@ -97,7 +135,7 @@
                     src="https://www.w3.org/Icons/valid-html401.png"
                     alt="¡HTML Validé!" />
             </li>
-            <li> IUT R&T </li>		
+            <li> IUT R&T </li>
         </ul>
 	    </footer>
     </body>

@@ -4,40 +4,28 @@
 
 <!DOCTYPE html>
 <html lang="fr">
- <head>
-  <!-- Title of the web page -->
-  <title>SAE 23</title>
-	 
-  <!-- Definition of the metadata of the website -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-  <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
-  <meta name="description" content="SAE" />
-  <meta name="keywords" content="HTML, CSS, PHP" />
-  <link rel="stylesheet" type="text/css" href="../styles/style.css" />
- </head>
- <!-- Navigation bar -->
- <header>
-     <nav>
-        <ul>
-	      <li><p> SAE 23 Mettre en place une solution informatique pour l'entreprise </p> </li>
-              <li><a href="Administration.php"> Administration </a> </li>
-              <li><a href="consultation.php"> Consultation </a></li> 
-              <li><a href="RT.php">RT</a></li>
-	      <li><a href="INFO.php">INFO</a></li>
-              <li><a href="index.php"> Accueil </a></li>
-	      <li><a href="login.php"> Connexion</a></li>
-	      <li><a href="../GanttProject/SAE23.pdf"> GANTT </a></li>
-    	</ul>
-      </nav>
+	<head>
+		<!-- Title of the web page -->
+		<title>SAE 23</title>
+			
+		<!-- Definition of the metadata of the website -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<meta name="description" content="SAE" />
+		<meta name="keywords" content="HTML, CSS, PHP" />
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+	</head>
+ 	<!-- Navigation bar -->
+ 	<header>
+ 	<?php 
+        include("./includes/nav.php");
+    ?>
     </header>
 	
 	<!-- Beginning of the web page's body -->
-	 <body>
-	 	<?php 
-            include("./includes/nav.php");
-    		?>
-		 <!-- Titre -->
+	<body>
+		<!-- Title -->
 		<h1> SAE 23 - Mettre en place une solution informatique pour l'entreprise </h1>
 		<br>
 		 
@@ -45,12 +33,12 @@
 		<?php 
 			include ("mysql.php");
 			
-			<!-- Creation of the administrator account -->
+			# Creation of the administrator account if it doesn't exist
 			$requete = "SELECT count(*) FROM `Administration`";
 			$exec_requete = mysqli_query($id_bd,$requete);
 			$reponse = mysqli_fetch_array($exec_requete);
 			
-		 	<!-- Creation of the form allowing a user to login -->
+		 	# Creation of the form allowing a user to login 
 			$count = $reponse['count(*)'];
 			if($count==0){
 				echo "<h1>Création de compte administrateur</h1>";
@@ -70,7 +58,7 @@
 		<h1> Bâtiments gérés </h1>
 		<p> Voici la liste des bâtiments gérés avec leurs salles, où on retroue des capteurs de luminosité,
 		    CO2 et température: </p>
-		 
+		
 		<!-- Listing the building halls where there's a sensor --> 
 		<ul>
 			<li> Bâtiment B </li>
@@ -86,25 +74,24 @@
 				</ul>
 		</ul>
 		<br>
-		 
-	 <!-- Website's footer -->
-	 <footer>
-		 <ul>
-			<li><a href="mlegales.php"> Mentions Légales </a></li>
-			<li>
-				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+		<!-- Website's footer -->
+	    <footer>
+			<ul>
+				<li><a href="mlegales.php"> Mentions Légales </a></li>
+				<li>
+					<a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
+						<img style="border:0;width:88px;height:31px"
+							src="http://jigsaw.w3.org/css-validator/images/vcss"
+							alt="¡CSS Validé!" /></a>
+				</li>
+				<li>
+					<a href="https://validator.w3.org/#validate_by_input">
 					<img style="border:0;width:88px;height:31px"
-						src="http://jigsaw.w3.org/css-validator/images/vcss"
-						alt="¡CSS Validé!" /></a>
-			</li>
-			 <li>
-			    <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
-				<img style="border:0;width:88px;height:31px"
-				    src="https://www.w3.org/Icons/valid-html401.png"
-				    alt="¡HTML Validé!" />
-			</li>
-			<li> IUT R&T </li>		
-		</ul>
-	 </footer>
+						src="https://www.w3.org/Icons/valid-html401.png"
+						alt="¡HTML Validé!" />
+				</li>
+				<li> IUT R&T </li>		
+			</ul>
+	    </footer>
 	</body>
 </html>

@@ -1,11 +1,8 @@
 	<nav> 
 		<ul>
-			<!-- Links without secured consultation -->
 			<li><a href="./index.php"> Accueil </a></li> 
 			<li><a href="./consultation.php"> Consultation </a></li>
 			<?php  
-	    # Links with secured consultation #
-			
             if ($_SESSION['auth']=="admin"){
                 echo "<li><a href=\"./Administration.php\"> Administration </a></li>";
                 echo "<li><a href=\"./INFO.php\"> Gestion INFO </a></li>";

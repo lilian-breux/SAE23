@@ -14,17 +14,20 @@
 		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
 		<meta name="description" content="SAE" />
 		<meta name="keywords" content="HTML, CSS, PHP" />
-		<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
 	</head>
-	
+	<!-- Navigation bar -->
+	<header>
+        <?php
+            include("./includes/nav.php");
+        ?>
+	</header>
 	
     <!-- Beginning of the website's body -->	
     <body>
-<!-- Navigation bar -->
         <section>
             <?php
-                include("./includes/nav.php");
-                include ("./mysql.php");
+                include ("./mysql.php");#Connection with the database
             ?>
             <!-- Login -->
             <h1>Connexion à un compte</h1>
@@ -35,8 +38,9 @@
                     <option value="Administration">Administration</option>
 	
 			
-		<!-- Beginning of the PHP code to display a responsive form --> 
+		        <!-- Beginning of the PHP code to display a responsive form --> 
                 <?php
+                    /* SQL query that allows to see all the building accounts that exist in the database */
                     $requete = "SELECT * FROM `Batiment` ORDER BY `name`";
                     $resultat = mysqli_query($id_bd, $requete)
                         or die("Execution de la requete impossible : $requete");
@@ -56,6 +60,7 @@
                 <button type="submit">Envoyer</button>
                 <button type="reset">Réinitialiser</button>
                 <?php
+                    /* Allows to notify if there was an error or everything went well */
                     if(isset($_GET['erreur'])){
                         $err = $_GET['erreur'];
                         if($err==1)
@@ -66,24 +71,24 @@
                 ?>
             </form>
         </section>
-	<!-- Website's footer -->
-	 <footer>
-		 <ul>
-			<li><a href="mlegales.php"> Mentions Légales </a></li>
-			<li>
-				<a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
-					<img style="border:0;width:88px;height:31px"
-						src="http://jigsaw.w3.org/css-validator/images/vcss"
-						alt="¡CSS Validé!" /></a>
-			</li>
-			 <li>
-			    <a href="https://validator.w3.org/#validate_by_input">
-				<img style="border:0;width:88px;height:31px"
-				    src="https://www.w3.org/Icons/valid-html401.png"
-				    alt="¡HTML Validé!" />
-			</li>
-			<li> IUT R&T </li>		
-		</ul>
-	 </footer>
+        <!-- Website's footer -->
+	    <footer>
+            <ul>
+                <li><a href="mlegales.php"> Mentions Légales </a></li>
+                <li>
+                    <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
+                        <img style="border:0;width:88px;height:31px"
+                            src="http://jigsaw.w3.org/css-validator/images/vcss"
+                            alt="¡CSS Validé!" /></a>
+                </li>
+                <li>
+                    <a href="https://validator.w3.org/#validate_by_input">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://www.w3.org/Icons/valid-html401.png"
+                        alt="¡HTML Validé!" />
+                </li>
+                <li> IUT R&T </li>		
+            </ul>
+	    </footer>
     </body>
 </html>

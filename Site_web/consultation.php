@@ -8,22 +8,25 @@
 	<!-- Title of the web page -->
 	<title>Consultation</title>  
 	    
-	/* Definition of the metadata of the website -->   
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-	<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
-	<meta name="description" content="SAE" />
-	<meta name="keywords" content="HTML, CSS, PHP" />
-        <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+        <!-- Definition of the metadata of the website -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <meta name="description" content="SAE" />
+        <meta name="keywords" content="HTML, CSS, PHP" />
+        <link rel="stylesheet" type="text/css" href="./styles/style.css" />
     </head>
-	
+	<!-- Navigation bar -->
+    <header>
+    <?php 
+        include("./includes/nav.php");
+    ?>
+    </header>
 	
     <!-- Beginning of the website's body -->
     <body>
-<!-- Navigation bar --> 
         <?php 
-            include("./includes/nav.php");
-            include("mysql.php");
+            include("mysql.php");#Connection with the database
     	?>
 	
 	<!-- Title -->
@@ -37,9 +40,8 @@
             while($row = mysqli_fetch_array($resultat)){
                 echo "<p>Date de la dernière mesure : ".$row["max(date)"]."<br /> Heure de la dernière mesure : ".$row["max(hours)"]."</p>";
             }
-            #echo "<p>Date de la dernière mesure".$ligne["date"]."<br /> Heure de la dernière mesure :".$test["hours"]."</p>";
         ?>
-	    
+
 	<!-- Table to extract the values sent by the sensors in real time from "Bâtiment RT" -->
         <table>
             <thead>
@@ -57,13 +59,14 @@
 		    
 		<!-- PHP code to extract the values sent by the sensors in real time from "Bâtiment RT" -->    
                 <?php 
-                    $piece = array('E207', 'E208');
-                    for ($j = 0; $j <= 1; $j++) {
+                    $piece = array('E207', 'E208');#We create a table which allows to have the name of the 2 rooms
+                    for ($j = 0; $j <= 1; $j++) {#Two loops that correspond to the two rooms
                         echo "<tr>";
                         echo "<td>".$piece[$j]."</td>";
 
-                        $captype = array('temperature', 'luminosite', 'co2');
-                        for ($i = 0; $i <= 2; $i++) {
+                        $captype = array('temperature', 'luminosite', 'co2');#We create a table which allows to have the different types of sensors
+                        for ($i = 0; $i <= 2; $i++) {#Three loops that correspond to the types of sensors
+                            /* SQL query that allows us to link all the tables and choose the information we want */
                             $requete="SELECT `Capteur`.`bate`, `Capteur`.`room`, `Capteur`.`type`, `Valeur`.`value`, MAX(`Mesure`.`date`), MAX(`Mesure`.`hours`)
                                     FROM `Capteur` 
                                         LEFT JOIN `Valeur` ON `Valeur`.`idcap` = `Capteur`.`idcapt` 
@@ -110,13 +113,14 @@
 		    
 		<!-- PHP code to extract the values sent by the sensors in real time from "Bâtiment INFO" -->    
                 <?php 
-                    $piece = array('B207', 'B208');
-                    for ($j = 0; $j <= 1; $j++) {
+                    $piece = array('B207', 'B208');#We create a table which allows to have the name of the 2 rooms
+                    for ($j = 0; $j <= 1; $j++) {#Two loops that correspond to the two rooms
                         echo "<tr>";
                         echo "<td>".$piece[$j]."</td>";
 
-                        $captype = array('temperature', 'luminosite', 'co2');
-                        for ($i = 0; $i <= 2; $i++) {
+                        $captype = array('temperature', 'luminosite', 'co2');#We create a table which allows to have the different types of sensors
+                        /* SQL query that allows us to link all the tables and choose the information we want */
+                        for ($i = 0; $i <= 2; $i++) {#Three loops that correspond to the types of sensors
                             $requete="SELECT `Capteur`.`bate`, `Capteur`.`room`, `Capteur`.`type`, `Valeur`.`value`, MAX(`Mesure`.`date`), MAX(`Mesure`.`hours`)
                                     FROM `Capteur` 
                                         LEFT JOIN `Valeur` ON `Valeur`.`idcap` = `Capteur`.`idcapt` 
@@ -145,24 +149,24 @@
                 ?>
             </tbody>
         </table>
-	<!-- Website's footer -->
-	 <footer>
-	 <ul>
-		<li><a href="mlegales.php"> Mentions Légales </a></li>
-		<li>
-			<a href="http://jigsaw.w3.org/css-validator/check/referer">
-				<img style="border:0;width:88px;height:31px"
-					src="http://jigsaw.w3.org/css-validator/images/vcss"
-					alt="¡CSS Validé!" /></a>
-		</li>
-		 <li>
-		    <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
-			<img style="border:0;width:88px;height:31px"
-			    src="https://www.w3.org/Icons/valid-html401.png"
-			    alt="¡HTML Validé!" />
-		</li>
-		<li> IUT R&T </li>		
-	</ul>
-	 </footer>
+        <!-- Website's footer -->
+	    <footer>
+            <ul>
+                <li><a href="mlegales.php"> Mentions Légales </a></li>
+                <li>
+                    <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
+                        <img style="border:0;width:88px;height:31px"
+                            src="http://jigsaw.w3.org/css-validator/images/vcss"
+                            alt="¡CSS Validé!" /></a>
+                </li>
+                <li>
+                    <a href="https://validator.w3.org/#validate_by_input">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://www.w3.org/Icons/valid-html401.png"
+                        alt="¡HTML Validé!" />
+                </li>
+                <li> IUT R&T </li>		
+            </ul>
+	    </footer>
     </body>
 </html>

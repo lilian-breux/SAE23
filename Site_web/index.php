@@ -16,6 +16,21 @@
   <meta name="keywords" content="HTML, CSS, PHP" />
   <link rel="stylesheet" type="text/css" href="../styles/style.css" />
  </head>
+ <!-- Navigation bar -->
+ <header>
+     <nav>
+        <ul>
+	      <li><p> SAE 23 Mettre en place une solution informatique pour l'entreprise </p> </li>
+              <li><a href="Administration.php"> Administration </a> </li>
+              <li><a href="consultation.php"> Consultation </a></li> 
+              <li><a href="RT.php">RT</a></li>
+	      <li><a href="INFO.php">RT</a></li>
+              <li><a href="index.php"> Accueil </a></li>
+	      <li><a href="login.php"> Connexion</a></li>
+	      <li><a href="../GanttProject/SAE23.pdf"> GANTT </a></li>
+    	</ul>
+      </nav>
+    </header>
 	
 	<!-- Beginning of the web page's body -->
 	 <body>

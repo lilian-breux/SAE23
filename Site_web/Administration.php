@@ -79,10 +79,16 @@
 	 <ul>
 		<li><a href="mlegales.php"> Mentions Légales </a></li>
 		<li>
-			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+			<a href="https://jigsaw.w3.org/css-validator/#validate_by_input">
 				<img style="border:0;width:88px;height:31px"
 					src="http://jigsaw.w3.org/css-validator/images/vcss"
 					alt="¡CSS Validé!" /></a>
+		</li>
+		<li>
+		    <a href="https://validator.w3.org/#validate_by_input">
+			<img style="border:0;width:88px;height:31px"
+			    src="https://www.w3.org/Icons/valid-html401.png"
+			    alt="¡HTML Validé!" />
 		</li>
 		<li> IUT R&T </li>		
 	</ul>

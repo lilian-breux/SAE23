@@ -61,10 +61,8 @@ footer {
   width: 100%;
 }
 
-footer p {
-  text-align: center;
-  color: #F2F2F2;
-  font-size: 25px
+footer li {
+	color: white;
 }
 
 footer li a {
@@ -73,6 +71,7 @@ footer li a {
 	font-size: 25px;
 	text-align: center;
 	display: block;
+	padding: 5px;
 }
 footer li a:hover {
     background-color: #772e25;
@@ -92,6 +91,7 @@ table {
 	border-collapse: collapse;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 3px
 }
 
 table, td{

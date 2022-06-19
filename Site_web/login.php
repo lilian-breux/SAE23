@@ -20,7 +20,7 @@
 	 <header>
 	     <nav>
 		<ul>
-		      <li><p> SAE 23 Mettre en place une solution informatique pour l'entreprise </p> </li>
+		      <li><p> SAE 23 Mettre en place une solution informatique pour l'entreprise  </p> </li>
 		      <li><a href="Administration.php"> Administration </a> </li>
 		      <li><a href="consultation.php"> Consultation </a></li> 
 		      <li><a href="RT.php">RT</a></li>

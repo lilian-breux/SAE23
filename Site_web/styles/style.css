@@ -1,4 +1,4 @@
-/*Style de base*/
+/* Style de base */
 *{
 	margin: 0;
 	padding: 0;
@@ -21,7 +21,6 @@ h1 {
 	border-width: 5px;
 	border-style: ridge;
 	border-color: black;
-	border-radius: 15px;
 }
 button {
 	background-color: #000000;
@@ -40,86 +39,43 @@ select {
 	cursor: pointer;
 }
 header {
-	text-align: center;
-	color: #000000;
-	font-size: 50px;
-	border-width: 5px;
-	border-style: ridge;
-	border-color: black;
-	border-radius: 15px;
+	position: relative;
+    top: 0;
+    width: 100%;
 }
 p{
 	font-size: 20px;
+	padding: 15px;
 }	
 li {
 	font-size: 20px;
 }
-
-
-/* Barre de navigation*/
-nav {
-	padding-bottom: 10px;
-    width: 100%;
+ul {
+	padding: 15px
 }
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-nav li {
-    float: left;
-}
-
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav li a:hover {
-    background-color: #111;
-}
-
-nav li {
-    border-right: 1px solid #bbb;
-}
-
-nav li:last-child {
-    border-right: 1px solid #bbb;
-}
-
 /* Footer */
-
 footer {
-	bottom: 0;
-	width: 100%;
-	position: fixed;
+  background-color: #c44536;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+  color: #F2F2F2;
+  font-size: 25px
 }
 
 footer li a {
+	float: right;
+	color: #F2F2F2;
+	font-size: 25px;
+	text-align: center;
 	display: block;
-    color: white;
-    text-align: right;
-    padding: 14px 16px;
-    text-decoration: none;
 }
-
-footer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
 footer li a:hover {
-    background-color: #111;
+    background-color: #772e25;
 }
 
 /* Classes d'erreurs */
@@ -130,14 +86,77 @@ footer li a:hover {
 	color: green;
 }
 
-/* Mentions légales */
+/* Tables */
+
+table {
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 table, td{
-    border: 3px solid;
+    border: 2px solid;
+	text-align: center;
 }
+
 thead {
 	font-size: 25px;
 }
+
 tr:first-child {
 	font-weight:bold;
+}
+
+/* Barre de navigation*/
+header {
+	  position: relative;
+    top: 0;
+    width: 100%;
+  
+}
+
+nav ul li p {
+   display: block;
+    color: #F2F2F2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    float: left;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #c44536;
+}
+
+nav li {
+   padding: auto;
+}
+
+nav li a {
+    display: block;
+    color: #F2F2F2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    float: right
+}
+
+nav li a:hover {
+    background-color: #772e25;
+}
+
+
+
+nav li a {
+    border-left: 1px solid #F2F2F2;
+}
+
+nav li a:last-child {
+    border-left: 1px solid #F2F2F2;
 }

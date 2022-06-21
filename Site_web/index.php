@@ -16,12 +16,12 @@
 		<meta name="keywords" content="HTML, CSS, PHP" />
 		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
 	</head>
- 	<!-- Navigation bar -->
+ <!-- Navigation bar -->
  	<header>
- 	<?php 
-        include("./includes/nav.php");
-    ?>
-    </header>
+ 		<?php 
+        	include("./includes/nav.php");
+    		?>
+    	</header>
 	
 	<!-- Beginning of the web page's body -->
 	<body>

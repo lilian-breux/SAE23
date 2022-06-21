@@ -29,8 +29,8 @@
         <section>
             <!-- Modifies building accounts -->
             <h1>Modification d'un bâtiment</h1>
+            <h2>Bâtiments existants</h2>
             <table>
-                <h2>Bâtiments existants</h2>
                 <tbody>
                     <tr><th>Nom du bâtiment</th><th>Login</th></tr>
                     <?php
@@ -42,13 +42,7 @@
                         $resultat = mysqli_query($id_bd, $requete);
                         
                         while($row = mysqli_fetch_array($resultat)){
-                            extract($row);
-                            if ($i){
-                                echo "<tr><td>".$row["name"]."</td><td>".$row["login"]."</td></tr>";
-                                $i=false;
-                            } else {
-                                echo "<tr><td>".$row["name"]."</td><td>".$row["login"]."</td></tr>";
-                            }  
+                            echo "<tr><td>".$row["name"]."</td><td>".$row["login"]."</td></tr>";
                         }
                     ?>
                 </tbody>
@@ -66,7 +60,21 @@
                 <button type="submit">Envoyer</button>
                 <button type="reset">Réinitialiser</button>
             </form>
+            <?php
+            if(isset($_GET['erreur'])){ 
+                    $err = $_GET['erreur'];
+                    if($err==0)
+                        echo "<p class=\"right\">Tout à bien fonctionné</p>";
+                    if($err==1)
+                        echo "<p class=\"error\">Utilisateur incorrect</p>";
+                    if($err==2)
+                        echo "<p class=\"error\">Nom du batiment et/ou Utilisateur sont incorrect</p>";
+                    if($err==3)
+                        echo "<p class=\"error\">Nom du batiment existe déjà</p>";
+            }
+            ?>
             <h2>Supression/Ajout de capteurs</h2>
+            
             <form action="./security/modifcapteur.php" method="POST">
                 <select name="bate" id="bate">
                 <?php
@@ -77,12 +85,7 @@
                     mysqli_close($id_bd);
                     while($ligne=mysqli_fetch_array($resultat)){
                         extract($ligne);
-                        if ($i){
-                            echo '<option value="'.$name.'">'.$name.'</option>' ;
-                            $i=false;
-                        } else {
-                             echo '<option value="'.$name.'">'.$name.'</option>' ;
-                        }  
+                        echo '<option value="'.$name.'">'.$name.'</option>' ;
                     }
                 ?>
                 </select><br />
@@ -104,14 +107,8 @@
                 /* Allows to notify if there was an error or everything went well */
                 if(isset($_GET['erreur'])){ 
                     $err = $_GET['erreur'];
-                    if($err==0)
+                    if($err==6)
                         echo "<p class=\"right\">Tout à bien fonctionné</p>";
-                    if($err==1)
-                        echo "<p class=\"error\">Utilisateur incorrect</p>";
-                    if($err==2)
-                        echo "<p class=\"error\">Nom du batiment et/ou Utilisateur sont incorrect</p>";
-                    if($err==3)
-                        echo "<p class=\"error\">Nom du batiment existe déjà</p>";
                     if($err==4)
                         echo "<p class=\"error\">Le capteur existe déjà</p>";
                     if($err==5)
@@ -133,7 +130,7 @@
                 <a href="https://validator.w3.org/#validate_by_input">
                 <img style="border:0;width:88px;height:31px"
                     src="https://www.w3.org/Icons/valid-html401.png"
-		     alt="¡HTML Validé!" /></a>
+                    alt="¡HTML Validé!" />
             </li>
             <li> IUT R&T </li>
         </ul>

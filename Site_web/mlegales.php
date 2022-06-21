@@ -20,7 +20,6 @@
  	<?php 
     include("./includes/nav.php");
   ?>
-	</header>
 	
   <!-- Beginning of the website's body -->	
   <body>
@@ -250,7 +249,7 @@
           <a href="https://validator.w3.org/#validate_by_input">
           <img style="border:0;width:88px;height:31px"
             src="https://www.w3.org/Icons/valid-html401.png"
-	       alt="¡HTML Validé!" /></a>
+            alt="¡HTML Validé!" />
         </li>
         <li> IUT R&T </li>		
       </ul>

@@ -1,4 +1,4 @@
-/* Style de base */
+/* Base style */
 *{
 	margin: 0;
 	padding: 0;
@@ -11,6 +11,7 @@
 	float: right;
 }
 
+/* Main style */
 body {
 background-color: #EFEFEF;
 }
@@ -53,16 +54,19 @@ li {
 ul {
 	padding: 15px
 }
+
 /* Footer */
 footer {
   background-color: #c44536;
   bottom: 0;
-  position: absolute;
+  position: block;
   width: 100%;
 }
 
-footer li {
-	color: white;
+footer p {
+  text-align: center;
+  color: #F2F2F2;
+  font-size: 25px
 }
 
 footer li a {
@@ -71,13 +75,12 @@ footer li a {
 	font-size: 25px;
 	text-align: center;
 	display: block;
-	padding: 5px;
 }
 footer li a:hover {
     background-color: #772e25;
 }
 
-/* Classes d'erreurs */
+/* Error clases */
 .error {
 	color: red;
 }
@@ -87,29 +90,57 @@ footer li a:hover {
 
 /* Tables */
 
-table {
-	border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 3px
+table{
+    border-collapse: collapse;
 }
-
-table, td{
-    border: 2px solid;
+thead {
+	font-size: 25px;
+	border: 2px solid;
+	font-weight:bold;
 	text-align: center;
 }
 
-thead {
-	font-size: 25px;
+.salle {
+  padding-top: 5%;
+  margin-left: 0 auto;
 }
 
-tr:first-child {
-	font-weight:bold;
+th{
+    padding: 20px;
+    border: 3px solid purple;
+    text-align: center;
 }
 
-/* Barre de navigation*/
+td {
+    font-size: 14px;
+    padding: 20px;
+    border: 2px solid purple;
+    text-align: left;
+    margin-left: 2px;
+}
+
+tbody {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding : 0 0 0 30px;
+}
+.capteur{
+  width: 30%;
+  display: inline-block;
+}
+.INFO, .RT {
+  width: 30%;
+  border-collapse: collapse;
+  display: inline;
+  margin-left: 4%;
+  padding-top: 5%;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Navigation bar */
 header {
-	  position: relative;
+	position: relative;
     top: 0;
     width: 100%;
   
@@ -132,6 +163,8 @@ nav ul {
     overflow: hidden;
     background-color: #c44536;
 }
+
+
 
 nav li a {
     display: block;
@@ -156,3 +189,4 @@ nav li a {
 nav li a:last-child {
     border-left: 1px solid #F2F2F2;
 }
+

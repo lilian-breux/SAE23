@@ -34,11 +34,11 @@
 	    
 	<!-- PHP code used to extract the last measurement done by the sensors --> 
         <?php 
-            $requete="SELECT max(date), max(hours) FROM `Mesure`";
+            $requete="SELECT date, max(hours) FROM `Mesure` WHERE `date` = (SELECT max(date) FROM `Mesure`)";
             $resultat = mysqli_query($id_bd, $requete);
                         
             while($row = mysqli_fetch_array($resultat)){
-                echo "<p>Date de la dernière mesure : ".$row["max(date)"]."<br /> Heure de la dernière mesure : ".$row["max(hours)"]."</p>";
+                echo "<p>Date de la dernière mesure : ".$row["date"]."<br /> Heure de la dernière mesure : ".$row["max(hours)"]."</p>";
             }
         ?>
 
@@ -163,7 +163,7 @@
                     <a href="https://validator.w3.org/#validate_by_input">
                     <img style="border:0;width:88px;height:31px"
                         src="https://www.w3.org/Icons/valid-html401.png"
-			 alt="¡HTML Validé!" /></a>
+                        alt="¡HTML Validé!" />
                 </li>
                 <li> IUT R&T </li>		
             </ul>

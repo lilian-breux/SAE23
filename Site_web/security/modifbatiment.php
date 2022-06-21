@@ -1,7 +1,7 @@
 <?php
     session_start(); 
 	if ($_SESSION['auth']!="admin")# If it's not a administator
-        header("Location:login.php?erreur=2");#Sends to the login.php page
+        	header("Location:login.php?erreur=2");#Sends to the login.php page
     
     include ("../mysql.php"); #Connection with the database
 	

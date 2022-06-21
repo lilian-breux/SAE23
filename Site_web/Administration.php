@@ -75,6 +75,28 @@
             ?>
             <h2>Supression/Ajout de capteurs</h2>
             
+            <table class="capteur">
+                <thead>
+                    <tr>
+                        <th colspan="3">Capteurs existants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th>Bâtiment</th><th>Salle</th><th>type de Capteur</th></tr>
+                    <?php
+                        include ("mysql.php"); #Connection with the database
+
+                        /* SQL query to retrieve all sensors in the database */
+
+                        $requete = "SELECT `bate`, `room`, `type` FROM `Capteur` ORDER BY `bate`, `room`";
+                        $resultat = mysqli_query($id_bd, $requete);
+                        
+                        while($row = mysqli_fetch_array($resultat)){
+                            echo "<tr><td>".$row["bate"]."</td><td>".$row["room"]."</td><td>".$row["type"]."</td></tr>";
+                        }
+                    ?>
+                </tbody>
+            </table>
             <form action="./security/modifcapteur.php" method="POST">
                 <select name="bate" id="bate">
                 <?php

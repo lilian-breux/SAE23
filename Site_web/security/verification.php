@@ -37,8 +37,6 @@
 		} else {#If the number is equal to 0
 			header('Location: ../login.php?erreur=1'); #Incorrect user or password
 			$_SESSION = array(); # Reset of the session table
-            session_destroy();   # Destroy the session
-            unset($_SESSION);
 		}
 	}
  ?>

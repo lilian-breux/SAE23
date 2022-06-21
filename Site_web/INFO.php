@@ -1,8 +1,8 @@
 <?php 
 	session_start(); 
 	if ($_SESSION['auth']!="INFO"){
-        if ($_SESSION['auth']!="admin"){
-            header("Location:login.php?erreur=2");
+        	if ($_SESSION['auth']!="admin"){
+            		header("Location:login.php?erreur=2");
         }
     }
 ?>

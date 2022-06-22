@@ -66,13 +66,13 @@
 				<ul>
 					<li> B208 </li>
 					<li> B207 </li>
-				</ul>
+				
 		<br />
 			<li> Bâtiment E </li>
-				<ul>
+				
 					<li> E207 </li>
 					<li> E208 </li>
-				</ul>
+				
 			</ul>
 		<br />
 		<!-- Website's footer -->

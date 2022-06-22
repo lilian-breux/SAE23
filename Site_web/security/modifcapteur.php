@@ -1,3 +1,4 @@
+
 <?php
     session_start(); 
 	if ($_SESSION['auth']!="admin")# If it's not a administator
@@ -39,7 +40,7 @@
         /* SQL queries */
 
         #To secure passwords we use SHA1. The passwords do not appear in clear text in the database
-        $requete = "DELETE FROM `Batiment` WHERE `bate`= '".$bate."' AND `type` = '".$type."' AND `room` = '".$room."'";
+        $requete = "DELETE FROM `Capteur` WHERE `bate`= '".$bate."' AND `type` = '".$type."' AND `room` = '".$room."'";
         $exec_requete = mysqli_query($id_bd,$requete)
             or die("Execution de la requete impossible : $requete");
         header('Location: ../Administration.php?erreur=6');#erreur=6 means that it worked well

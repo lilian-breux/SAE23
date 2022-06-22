@@ -63,12 +63,9 @@
 		<!-- Listing the building halls where there's a sensor --> 
 			<ul>
 			<li> Bâtiment B </li>
-				<ul>
 					<li> B208 </li>
 					<li> B207 </li>
-				
-		<br />
-			<li> Bâtiment E </li>
+			<li> <br />Bâtiment E </li>
 				
 					<li> E207 </li>
 					<li> E208 </li>

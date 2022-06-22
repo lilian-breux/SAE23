@@ -1,3 +1,4 @@
+
 <?php 
 	session_start(); 
 	if ($_SESSION['auth']!="admin")# If it's not a administator
@@ -6,10 +7,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
+		
         <!-- Title of the web page -->
-		<meta charset="UTF-8" />
 		<title>Administration</title>
-
         <!-- Definition of the metadata of the website -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -20,17 +20,21 @@
 	</head>
 
 	<!-- Navigation bar -->
-    <header>
+   
+    <body>
+         <header>
         <?php 
             include("./includes/nav.php");
         ?>
-    </header>
-    <body>
-        <section>
+    	</header>
             <!-- Modifies building accounts -->
             <h1>Modification d'un bâtiment</h1>
-            <h2>Bâtiments existants</h2>
-            <table>
+            <table class="capteur">
+				 <thead>
+                    <tr>
+                        <th colspan="2">Bâtiments existants</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr><th>Nom du bâtiment</th><th>Login</th></tr>
                     <?php
@@ -47,7 +51,8 @@
                     ?>
                 </tbody>
             </table>
-            <form action="./security/modifbatiment.php" method="POST">
+		<section>
+            <form class="formulaire" action="./security/modifbatiment.php" method="POST">
                 <input type="text" name="bate" id="bate" placeholder="Nom du batiment" maxlength="4" required /><br />
                 <input type="email" name="email" id="email" placeholder="Email" required /><br />
                 <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" minlength="3" required /><br />
@@ -60,6 +65,7 @@
                 <button type="submit">Envoyer</button>
                 <button type="reset">Réinitialiser</button>
             </form>
+		</section>
             <?php
             if(isset($_GET['erreur'])){ 
                     $err = $_GET['erreur'];
@@ -72,8 +78,8 @@
                     if($err==3)
                         echo "<p class=\"error\">Nom du batiment existe déjà</p>";
             }
-            ?>
-            <h2>Supression/Ajout de capteurs</h2>
+            ?>           
+			<h2	 class="titre">Suppression/Ajout de capteurs</h2>
             
             <table class="capteur">
                 <thead>
@@ -97,6 +103,7 @@
                     ?>
                 </tbody>
             </table>
+			<section>
             <form action="./security/modifcapteur.php" method="POST">
                 <select name="bate" id="bate">
                 <?php
@@ -137,8 +144,8 @@
                         echo "<p class=\"error\">Le capteur n'existe pas</p>";
                 }
             ?>
-        </section>
         <!-- Website's footer -->
+	</section>
 	    <footer>
         <ul>
             <li><a href="mlegales.php"> Mentions Légales </a></li>

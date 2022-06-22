@@ -17,6 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
 	</head>
  	<!-- Navigation bar -->
+	<body>
  	<header>
  	<?php 
         include("./includes/nav.php");
@@ -24,7 +25,7 @@
     </header>
 	
 	<!-- Beginning of the web page's body -->
-	<body>
+	
 		<!-- Title -->
 		<h1> SAE 23 - Mettre en place une solution informatique pour l'entreprise </h1>
 		<br>
@@ -54,26 +55,26 @@
 		<!-- Saé's presentation paragraph -->
 		<p> L'objectif de ce site web est d'offrir aux gestionnaires des bâtiments de l'IUT de Blagnac
 			une interface conviviale et simple pour la visualisation des données capteurs. </p>
-		<br>
+		<br />
 		<h1> Bâtiments gérés </h1>
 		<p> Voici la liste des bâtiments gérés avec leurs salles, où on retrouve des capteurs de luminosité,
 		    CO2 et température: </p>
 		
 		<!-- Listing the building halls where there's a sensor --> 
-		<ul>
+			<ul>
 			<li> Bâtiment B </li>
 				<ul>
 					<li> B208 </li>
 					<li> B207 </li>
 				</ul>
-			<br>
+		<br />
 			<li> Bâtiment E </li>
 				<ul>
 					<li> E207 </li>
 					<li> E208 </li>
 				</ul>
-		</ul>
-		<br>
+			</ul>
+		<br />
 		<!-- Website's footer -->
 	    <footer>
 			<ul>
@@ -88,7 +89,7 @@
 					<a href="https://validator.w3.org/#validate_by_input">
 					<img style="border:0;width:88px;height:31px"
 						src="https://www.w3.org/Icons/valid-html401.png"
-						alt="¡HTML Validé!" />
+					     alt="¡HTML Validé!" /></a>
 				</li>
 				<li> IUT R&T </li>		
 			</ul>

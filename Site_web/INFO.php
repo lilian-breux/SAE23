@@ -21,13 +21,14 @@
 		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
 	</head>
  	<!-- Navigation bar -->
- 	<header>
- 	<?php 
-        include("./includes/nav.php");
-    ?>
-    </header>
+ 	
     <body>
-        <h1>Batiment informatique</h1>
+		<header>
+		 	<?php 
+				include("./includes/nav.php");
+			?>
+    	</header>
+    	    <h1>Batiment informatique</h1>
         <?php 
             include("mysql.php");#Connection with the database
     	?>
@@ -35,7 +36,7 @@
             <table class="capteur">
                 <thead>
                     <tr>
-                        <th colspan="4">Salle B208</th>
+                        <th colspan="3">Salle B208</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,7 +65,7 @@
             <table class="capteur">
                 <thead>
                     <tr>
-                        <th colspan="4">Salle B208</th>
+                        <th colspan="3">Salle B208</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,7 +93,7 @@
             <table class="capteur">
                 <thead>
                     <tr>
-                        <th colspan="4">Salle B208</th>
+                        <th colspan="3">Salle B208</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -122,7 +123,7 @@
             <table class="capteur">
                 <thead>
                     <tr>
-                        <th colspan="4">Salle B207</th>
+                        <th colspan="3">Salle B207</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -150,7 +151,7 @@
             <table class="capteur">
                 <thead>
                     <tr>
-                        <th colspan="4">Salle B207</th>
+                        <th colspan="3">Salle B207</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -178,7 +179,7 @@
             <table class="capteur">
                 <thead>
                     <tr>
-                        <th colspan="4">Salle B207</th>
+                        <th colspan="3">Salle B207</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -218,7 +219,7 @@
                     <a href="https://validator.w3.org/#validate_by_input">
                     <img style="border:0;width:88px;height:31px"
                         src="https://www.w3.org/Icons/valid-html401.png"
-                        alt="¡HTML Validé!" />
+                        alt="¡HTML Validé!" /></a>
                 </li>
                 <li> IUT R&T </li>		
             </ul>

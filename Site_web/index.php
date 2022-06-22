@@ -56,7 +56,7 @@
 			une interface conviviale et simple pour la visualisation des données capteurs. </p>
 		<br>
 		<h1> Bâtiments gérés </h1>
-		<p> Voici la liste des bâtiments gérés avec leurs salles, où on retroue des capteurs de luminosité,
+		<p> Voici la liste des bâtiments gérés avec leurs salles, où on retrouve des capteurs de luminosité,
 		    CO2 et température: </p>
 		
 		<!-- Listing the building halls where there's a sensor --> 

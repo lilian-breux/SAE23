@@ -1,3 +1,4 @@
+
 <?php
     session_start(); 
 	if ($_SESSION['auth']!="admin")# If it's not a administator

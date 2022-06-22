@@ -1,3 +1,4 @@
+
 /* Base style */
 *{
 	margin: 0;
@@ -59,7 +60,8 @@ ul {
 footer {
   background-color: #c44536;
   bottom: 0;
-  position: block;
+  left: 0;
+  position: fixed;
   width: 100%;
 }
 
@@ -92,6 +94,11 @@ footer li a:hover {
 
 table{
     border-collapse: collapse;
+	margin-left: 3%;
+
+	overflow:scroll;
+	width: 200px;
+	height: 500px;
 }
 thead {
 	font-size: 25px;
@@ -122,21 +129,16 @@ td {
 tbody {
 	overflow-x: hidden;
 	overflow-y: scroll;
-	padding : 0 0 0 30px;
+	margin : 0 0 0 30px;
 }
 .capteur{
-  width: 30%;
-  display: inline-block;
+  margin-top: 4%;
+  width: 400px;
+  display: inline-block;	
+  margin-bottom: 1%;
 }
-.INFO, .RT {
-  width: 30%;
-  border-collapse: collapse;
-  display: inline;
-  margin-left: 4%;
-  padding-top: 5%;
-  text-align: center;
-  font-size: 30px;
-}
+
+
 
 /* Navigation bar */
 header {
@@ -155,6 +157,19 @@ nav ul li p {
     font-size: 25px;
     float: left;
 }
+
+.titre {
+	text-align: center;
+	color: #000000;
+	font-size: 45px;
+	border-width: 5px;
+	border-style: ridge;
+	border-color: black;
+}
+
+
+
+
 
 nav ul {
     list-style-type: none;
@@ -176,6 +191,8 @@ nav li a {
     float: right
 }
 
+
+
 nav li a:hover {
     background-color: #772e25;
 }
@@ -186,7 +203,17 @@ nav li a {
     border-left: 1px solid #F2F2F2;
 }
 
+
+
 nav li a:last-child {
     border-left: 1px solid #F2F2F2;
+}
+
+
+
+section{
+	margin-top: 2%;
+	margin-left: 2%;
+margin-bottom: 5%;
 }
 
